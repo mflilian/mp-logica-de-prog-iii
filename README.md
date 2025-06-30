@@ -14,12 +14,12 @@ A ideia é simular um **mini carrinho de compras**, onde a pessoa pode:
 
 ## 🧠 Conceitos trabalhados
 
-✅ Tipos de dados (string, number, boolean, array, objeto)
-✅ Estrutura de repetição `for`
-✅ Funções
-✅ Condicionais (`if` / `else`)
-✅ Manipulação de HTML com JavaScript
-✅ Métodos de array (introdução ao `find` e `push`)
+- ✅ Tipos de dados (string, number, boolean, array, objeto)
+- ✅ Estrutura de repetição `for`
+- ✅ Funções
+- ✅ Condicionais (`if` / `else`)
+- ✅ Manipulação de HTML com JavaScript
+- ✅ Métodos de array (introdução ao `find` e `push`)
 
 ---
 
