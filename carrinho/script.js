@@ -42,7 +42,7 @@ function mostrarProdutos() {
     // se lê: "crio um botão."
 
     // Verificamos se o produto está em estoque
-    if (produto.emEstoque === "true") {
+    if (produto) {
       botao.textContent = "Adicionar";
       botao.disabled = false; // botão ativado
       // se lê: "se o produto estiver em estoque, o texto do botão vai ser 'Adicionar' e o botão fica ativado."
