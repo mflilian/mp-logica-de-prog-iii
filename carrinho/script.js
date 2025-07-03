@@ -94,7 +94,7 @@ function adicionarAoCarrinho(id) {
   // Se não tiver, mostramos um alerta dizendo que não tem estoque
   if (produto.temEstoque === true) {
     carrinho.push(produto)
-    console.log("adicionado", produto)
+    atualizarCarrinho()
   } else {
     alert("Produto indisponível")
   }
@@ -106,6 +106,11 @@ function atualizarCarrinho() {
   carrinhoUl.innerHTML = "";
   // se lê: "limpo o conteúdo atual do carrinho."
 
+  carrinho.forEach((produto) => {
+    const lista = document.createElement("li")
+    lista.textContent = produto.nome + " - R$ " + produto.preco
+    carrinhoUl.appendChild(lista)
+  })
   // Passamos por cada item do carrinho
   // se lê: "para cada produto no carrinho, faço os passos abaixo."
 
@@ -120,16 +125,30 @@ function atualizarCarrinho() {
 function finalizarCompra() {
   // Criamos uma variável para somar o valor total
   // se lê: "crio uma variável chamada total e começo com zero."
+  let total = 0
 
-  // Passamos por cada produto no carrinho e somamos os preços
-  // se lê: "para cada produto no carrinho, somo o preço no total."
+  carrinho.forEach((item) => {
+    // se lê: "para cada item no carrinho, somo o preço no total."
+    total = total + item.preco
+    // total += item.preco
+  })
 
+  let cupom = prompt("Digite seu cupom ou deixe em branco se n tiver: BRINDE ou DESCONTO10")
   // Perguntamos se a pessoa quer usar cupom
   // se lê: "pergunto para a pessoa se ela quer usar um cupom."
 
-  // Se for BRINDE, mostramos uma mensagem de brinde
+  // Se for BRINDE, mostramos um alerta com uma msg de brinde
   // se lê: "se a pessoa digitar BRINDE, mostro uma mensagem dizendo que ganhou um brinde."
+  if (cupom === "BRINDE") {
+    alert("Voce ganhou um brindeeeee!!")
+  } else if (cupom === "DESCONTO10") {
+    total = total * 0.9;
+    alert("Desconto de 10% aplicado")
+  } else {
+    alert("Nenhum cupom válido")
+  }
 
+  alert("Compra finalizada! Total: R$" + total.toFixed(2))
   // Se for DESCONTO10, aplicamos 10% de desconto
   // se lê: "se digitar DESCONTO10, aplico 10% de desconto no total."
 
